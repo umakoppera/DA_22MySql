@@ -1,0 +1,76 @@
+Day - 1
+
+Data:
+------
+collection of raw facts,figures,symbol
+it is meaningless and unprocessed
+information:
+-----------
+the data is prosessed or meaningfull data
+ex:stid=101;
+File Management System(Fms)
+------------------------------
+key functions of FMS:
+---------------------
+1.File create
+2.File open
+3.File delete
+4.File read
+5.Share data
+6.t provide access
+
+Drawbacks of FMS:
+--------------------
+1.data inconsistency
+2.less security
+3.data redundancy
+4.backup/recovery
+5.data manipulation
+
+Database:
+----------
+database is a tool it is used to store data.
+
+Management System:
+-------------------
+to manage data, like retrive, update,delete data
+DBMS:
+-----
+1.DBMS stands for database management system.
+2.it is a software
+3.the main purpose of dbms is used to store data in permanatally
+and manage data.
+advantages of dbms:
+--------------------
+reduce dataredundency
+to provide more security
+to improve data inconsistency
+possible to recover/backup the data
+to maintain readability
+
+types of dbms:
+--------------
+no sql dbms:
+-------------
+the data is stored into the unstructured format.
+Ex:mongodb,postgrace sql
+Using RDBMS:
+------------
+it is stands for relational database management system.
+in rdbms the data stored into rows and columns(table format)
+the data is stored into the structured format
+EX:mysql,oracle...etc
+MySQL:
+-------
+it is database.
+in MySQL data is stored into the table format.
+in MySQL provide relationships
+is to maintain data.
+it is open source database
+it is free of cost.
+
+filed/column:it represents particular column
+studentid=101
+record/row:collection of fields.
+studenid=101,sname='rahul',course='da';
+table:collection of records and fields.
