@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 Day - 1
 
 Data:
@@ -152,4 +152,4 @@ studentid=101
 record/row:collection of fields.
 studenid=101,sname='rahul',course='da';
 table:collection of records and fields.
->>>>>>> 307738497113c74d50bfee256f34c05c3f868cd2
+
