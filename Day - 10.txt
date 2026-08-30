@@ -1,0 +1,98 @@
+Day - 10  
+************
+Date & Time : 
+1)NOW():
+---------
+it returns current time and date
+EX: select now();//
+
+2)CURDATE():
+------------
+it returns the current date only.
+select curdate();
+
+3)CURTIME():
+--------------
+it returns the current time
+select curtime();
+
+4)YEAR():
+------------
+it is used to extract the year in a date
+
+select year(curdate());
+
+5)MONTH():
+----------------
+it is used to extract month in a date.
+select month(curdate());
+
+6)DAY():
+-----------
+it extract day in a date.
+select day(curdate());//21
+
+7)DAY NAME():
+------------------
+it extract day in a date and return dayname
+select dayname(curdate());//Friday
+
+8)DATEDIFF():
+------------
+it returns different between two dates.
+
+9)DATEADD():
+-------------
+it is used to add the days,or months or year in a date
+
+syntax:
+---------
+select date_add(curdate(), interval value);
+select date_add(curdate(), interval 10 days);
+
+10)DATE_SUB():
+----------------
+syntax:
+-----------
+select date_sub(curdate(),interval 10 days);
+
+11)DATE_FORMAT():
+------------------
+select curdate();//2026-08-21
+
+select date_format(curdate(),'%d%m%y');
+
+12)STR_TO_DATE():
+------------------------
+to convert string into a date.
+
+select STR_TO_DATE('19-08-2026','%y%m%d');
+
+System:
+------------
+Version():
+-----------
+select version();
+
+DATABASE():
+------------
+select database();
+
+USER();
+-----------
+it returns the current username and host
+
+Current_user():
+-----------------------
+it returns current user name.
+
+CONNECTION_ID():
+-----------------
+select connection_id();
+
+LAST_INSERT_ID():
+---------------------
+1,2,3,4,5,6
+
+Select last_insert(id);
+
