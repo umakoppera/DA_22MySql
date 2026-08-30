@@ -1,0 +1,79 @@
+Day - 7
+
+Using delete operation to delete particular row:
+------------------------------------------------------
+Ex:Query: delete from student1 where name = 'sam';
+
+To delete all data:
+----------------------
+Query:delete from student1;
+To check:select * from student1;
+
+Using truncate operation:
+-----------------------------
+Query: truncate table student;
+To check: select * from student;
+
+Using: Drop operation:
+---------------------------
+Query: Drop table student;
+To check: show tables;
+
+*Limit:
+-------
+Limit is used to restrict the restrict the retrive rows
+Syntax: select * from product limit no.of rows;
+Eg:1)select * from product limit 5;
+   2)select * from product limit 3;
+
+*Agreegate Functions:
+The main purpose of agreegate functions is used to perform mathematical
+ calculation in multiple rows and return a single value.
+
+It has 5 agreegate functions:
+1)Count(*);
+2)Sum (Column name);
+3)Avg (Column name);
+4)Max (Column name);
+5)Min (Column name);
+
+1)Count(*): It returns the no.of rows count value:
+Syntax:1)Select count(*) from product;
+       2)Select count(*) as total_count from product;
+
+2)Sum(Column name):It returns a sum of all values in a column
+Syntax:1)Select sum(quantity) from product;
+
+3)Avg(Column name):It returns a avg of all values in column name
+Syntax: Select avg(quantity) from product;
+
+4)Max(Column name):To return a maximum value in a column name.
+Syntax: Select max(price) from product;
+
+5)Min(Column name):To return a minimum value in column name.
+Syntax: Select min(price) from product;
+
+Group by:
+------------
+To divide the data into a group of same values.
+Syntax:
+1)Select category from product group by category;
+
+2)To count the Categories persons:
+Syntax:
+Select category,count(*) from product group by category;
+
+3)To find the total quatity of each category:
+Syntax:Select category,sum(quantity) from product group by category;
+
+4)To find the avg quantity of each category:
+Syntax:Select category,avg(quantity) from product
+group by category;
+
+5)Find the max price of each category:
+Syntax:Select category,max(price) from product
+group by category;
+
+6)Find the min price of each category:
+Syntax:Select category,min(price) from product
+group by category;
