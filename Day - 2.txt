@@ -1,0 +1,143 @@
+Day - 2
+
+Data models:
+-------------
+data model is way of organizing the data and representing the data,
+how to store data,how to manipulate the data into dbms.
+
+types of data models:
+--------------------------
+1.Hierarchical data model:
+--------------------------
+the organized data into a tree like structure(parent and child)
+every child contain only one parent.
+every parent can have multiple child
+in that model easy retrive and maintain the data.
+in that above model not comfortable for maintain complex relationships.
+
+EX: institute------course----students
+
+2.Network datamodel:
+-------------------
+the data is organized into nodes(entities) and edges(relationships)
+in the model one parent contain many childs.
+one child can have many parents.
+
+it flexible for compare to hierarchical model
+
+EX: one student can take multiple courses.
+-----
+each course learn multiple students.
+
+3.Object Oriented data model:
+-----------------------------
+all data represented at objects.
+every object can have 2 things
+properties and behaviours
+
+4.Relational data model:
+------------------------
+the data is stored into a table with columns(fields)and rows(records)
+Ex:Student:Sid,Sname...etc
+
+DataModel Levels:
+-------------------
+1)Conceptual level
+2)Logical level
+3)Physical level
+
+Introduction of SQL:
+---------------------
+sql stands for structure query language.
+it is used to communicate with database such as MySQL,oracle,postgresql
+using sql language:
+to create and delete structure in database.
+to insert,update and delete structure in database.
+easy to retrive the data into a database.
+to provide the control access.
+
+sql language is divided into different categories:
+--------------------------------------------------------
+1.DDL
+-------
+DDL stands for data definition language.it used to create and manipulate
+database such as tables,views,database and schema
+i)create
+ii)alter
+iii)drop
+iv)truncate
+v)rename
+
+2.DML
+-------
+DML stands for data manipulation language.it is used to add,update and delete the data.
+i)insert
+ii)update
+iii)delete
+
+3.TCL
+---------
+TCL stands for transaction control language.it is used to transactions.
+i)commit;
+ii)rollback;
+iii)savepoint;
+
+4.DQL
+----------
+DQL stands for data query language.it is used to retrive the data.
+i)select
+
+5.DCL
+-----------
+DCL stands for data control language.it is used to provide control access for database
+i)grant
+ii)revoke
+
+datatypes in sql:
+-------------------
+1)Numeric datatypes
+----------------------
+tinyint--------it  stores very small amount of data
+smallint-------
+mediumint------
+int--------
+bigint------
+float--------
+decimal(p,s)------decimal(3,2)
+(total number of digits before decimal point,total number of digits after decimal point)
+boolean------true or 1/false or 0
+
+2)String datatypes
+--------------------
+char()------->it contain fixed length---char(2);
+varchar()----->it contain variable length----varchar(20);
+text-------
+enum-------it is select only one value in a predefine list
+course enum('java','python','da');
+
+3)Data and time datatypes
+--------------------------
+date--------'yyyy-mm-dd'
+time--------'hh-mm-ss'
+datetime-----------'yyyy-mm-dd hh-mm-ss'
+timestamp----------current time.
+
+the column values must be contains to above mention the range of values
+Ex:age,marks
+
+default:
+--------------
+if in case no insert any data in that column that time automatically to
+insert default values
+Ex:address
+
+DDL Commands:
+-------------
+Create:
+---------
+create table table_name(coll datatype  (constraint_name) (optional),col2 da
+id
+name
+address
+age
+

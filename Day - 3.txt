@@ -1,0 +1,100 @@
+Day - 3
+constraints:
+--------------
+contraints are used to rules applied in table columns.the main purpose of constraints and 
+used ensure data consistency,data integrity,data accuracy.
+1)unique
+2)not null
+3)primary key
+4)foreign key
+5)check
+6)default
+
+unique:
+--------
+ensure all the values are unique in a column.
+Ex:stu_id
+
+not null:
+---------
+every column must be contain a value
+Ex:names
+
+primary key:
+------------
+combination not null and unique
+Ex:aadhar id
+
+foreign key:
+--------------
+it is used to maintain the relationship between tables.
+Ex:customer,menu
+
+check:
+------
+the column values must be contains to above mention the range of values
+
+default:
+------------
+is in case no insert any data in that column that time automatically to insert default value.
+
+create:
+--------
+create table table_name(coll dattype constraint_name)(optional),col2 datatype...
+id
+name
+address
+age
+
+create table employee(id int,name varchar(20),address varchar(20),age int);
+
+desc table_name;//show the structure of particular table.
+describe table_name:
+
+Alter:
+--------
+add column:
+-----------
+alter table table_name add column salary decimal(10,2);
+
+
+alter table table_name add column salary decimal(10,2),phonenum bigint;
+
+remove column:
+--------------
+alter table table_name drop column colname,drop column colname...etc;
+# alter table employee drop column salary;
+alter alter table table_name drop column colname,drop column colname...etc;
+rename column:
+
+modify datatype:
+----------------
+alter table table_name modify colname updatedatatype;
+# alter table employee modify name varchar(100);
+alter table employee modify id bigint;
+desc employee
+
+Drop:
+------
+drop table table_name:
+# drop table employee1;
+show tables;
+rename table;
+
+rename:
+------------
+rename table old to new_name;
+
+employee:
+------------
+id,name,address,age,phonenum
+
+create table employee (id int primary key,
+                     name varchar(20) not null,
+                     address varchar(20) default 'hyd',
+                     age int check (age>0 and age<120),
+                     phonenum bigint unique);
+
+create table dept(did int,dname varchar(20),
+                 foreign key(did) references employee(id));
+

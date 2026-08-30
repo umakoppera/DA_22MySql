@@ -1,5 +1,4 @@
 Day - 1
-
 Data:
 ------
 collection of raw facts,figures,symbol
@@ -72,5 +71,4 @@ it is free of cost.
 filed/column:it represents particular column
 studentid=101
 record/row:collection of fields.
-studenid=101,sname='rahul',course='da';
-table:collection of records and fields.
+studenid=101,sname='rahul',course='da'
