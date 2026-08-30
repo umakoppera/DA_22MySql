@@ -1,0 +1,59 @@
+Day - 8
+
+how to add the new column an existing table at particular place.
+
+create table student(id int,name varchar(20),age int);
+
+alter table student add column email varchar(20) first;
+
+alter table student add column dob date after name;
+
+cse 10
+ece 12
+mech 5
+civil 8
+
+select dept,count(*) from student group by dept;
+
+having cluse:
+----------------
+the having cluse is used to filter the groups.
+the having cluse is used to condition for aggregate function.
+
+find the dept whose dept students is greater 10?
+----------------------------------------------------------
+select dept,count(*) from student group by dept;
+select dept,count(*)as tcount from student group by dept having tcount>10;
+to find the max price of each category and retrive only which categories maximum price
+is greater than 50000.
+
+select category,max(price) from product group by category;
+
+order by:
+-------------
+order by cluse is used to sort values based on column
+syntax:
+------------
+Asc:it represent ascending order.
+Desc:it represent decending order.
+
+the default nature of order by cluse in ascending order.
+
+select * from product order by price;
+
+find each category count and to retrive categories is ace order
+
+select category,count(*) from product group by category order by tcount;
+
+writing order:
+-----------------
+where
+group by
+having
+order by
+limit
+ 
+Distinct:
+-------------
+it is used to remove the duplicates or find the unique data.
+
