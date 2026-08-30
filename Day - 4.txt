@@ -1,0 +1,86 @@
+Day - 4
+add constraints with existing table:
+---------------------------------------
+create table emp(id int,age int,name varchar(20),address varchar(20),dpid int,phonenum
+bigint);
+primary key:
+---------------
+alter table emp add constraint pk_id primary key(id);
+alter table emp drop primary key;
+unique:
+----------
+alter table emp add constraint uk_ph unique(phonenum);
+alter table emp drop constraint uk_ph;
+
+check:
+----------
+alter table emp add constraint chk_age check(age>18);
+alter table emp drop constraint chk_age;
+
+default/not null:
+--------------------
+alter table emp modify name varchar(20) not null;
+alter table emp modify name varchar(20) Null;
+
+default:
+----------
+alter table emp modify address varchar(20) default "hyd";
+alter table emp modify address varchar(20);
+
+alter table dept add constraint fk_did foreign key(did)
+reference emp(id);
+
+procedure intigrity constraint:
+---------------------------
+referential intigrity constraints:
+----------------------------------
+to ensure using the foreign key constraint
+entity integrity constraint:
+------------------------------
+primary key
+
+domain integrity constraints:
+-------------------------------------
+using unique.
+
+DML commands;
+-------------
+dml stands for data manupulation language.
+the main purpose of dml commands is used to insert or manipulate
+data into a tables,views...etc
+insert
+update
+delete
+
+insert:
+----------
+1st way:
+-------------
+insert into employee values(
+101,'jaya','kur',23,7887979778,202
+);
+
+2nd way:
+--------
+insert into employee(id,name,age,address,phonenum,did)
+values(102,'ram',200,'hyd',9784532901,202);
+
+3rd way:
+---------
+insert into employee(id,name,age)
+values(103,'sam',20);
+
+4th way:
+---------
+inaert into employee(id,name,age,address,phonenum,did)
+values
+(104,'ram',20,'hyd',190897989,205),
+(105,'suma',22,'jntu'190887989,207)
+;
+select * from employee;
+
+DQL:
+---------
+data query language.it is used to retrive data into tables,
+views...etc
+select * from table_name;

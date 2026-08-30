@@ -1,0 +1,106 @@
+Day - 5
+create table new_table like old_table;
+create table employee like emp;
+
+insert into employee select * from emp;
+
+auto_increment:
+----------------
+it is the feature of MySQL.it is automatically generate the number
+when we are insert the new row/record
+
+create table student(id int primary key auto_increment,
+             name varchar(20),age int;
+             );
+
+insert into student(name,age)values
+('sam',25),('ram',30),('geetha',60);
+
+to retrive few columns in a table:
+---------------------------------------
+select name,age from student;
+
+where cluse:
+-------------
+where cluse is used to filter the rows/records in a table based on condition
+
+operators:
+----------------
+Arithematic operators:
+------------------------
++,-,*,/,%
+
+Relational or Comparison operators:
+-------------------------------------
+=,>,<,>=,<=,!= or <>
+10<50
+20>40
+
+Logical operators:
+-----------------------
+and,or,not
+
+20<40 and 10>70//f
+20<40 or 10>70//t
+
+not 20>80;t
+
+bitwise operators:
+----------------------
+&,|,^,<<,>>
+
+2&3 
+
+INSERT INTO employee
+(emp_name, department, salary, experience, status)
+VALUES
+('Ravi',   'IT',        60000, 4, 1),
+('Anil',   'HR',        45000, 3, 2),
+('Priya',  'Finance',   70000, 6, 4),
+('Sneha',  'IT',        85000, 7, 3),
+('Kiran',  'Sales',     35000, 2, 1),
+('Arjun',  'IT',        55000, 5, 5),
+('Divya',  'HR',        40000, 4, 2),
+('Rahul',  'Finance',   65000, 8, 6),
+('Meena',  'Sales',     30000, 1, 1),
+('Suresh', 'IT',        95000, 10, 7),
+('Pooja',  'Marketing', 50000, 3, 2),
+('Vijay',  'Finance',   48000, 4, 4),
+('Neha',   'IT',        72000, 6, 3),
+('Amit',   'Sales',     42000, 5, 1),
+('Swathi', 'Marketing', 58000, 7, 5);
+
+products
+
+(product_id INT AUTO_INCREMENT
+product_name VARCHAR(50)
+price DECIMAL(10,2)
+quantity INT);
+
+INSERT INTO products
+(product_name, price, quantity)
+VALUES
+('Laptop',       55000, 10),
+('Mouse',         800, 25),
+('Keyboard',     1500, 15),
+('Monitor',     12000, 8),
+('Headphones',   2500, 20),
+('Webcam',        3500, 12),
+('Printer',      15000, 5),
+('SSD',           6000, 18),
+('RAM',           4000, 30),
+('USB Cable',      500, 40),
+('Router',        3000, 10),
+('Speaker',       4500, 7);
+
+create table employee(emp_id INT AUTO_INCREMENT primary key,
+emp_name VARCHAR(50),
+department VARCHAR(50),
+salary DECIMAL(10,2),
+experience INT,
+status INT);
+
+(product_id INT AUTO_INCREMENT primary key,
+product_name VARCHAR(50),
+price DECIMAL(10,2),
+quantity INT);

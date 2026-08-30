@@ -1,0 +1,116 @@
+Day - 6
+predicates/special operators:
+------------------------------
+it is a condition.this operators mainly used to range of comparision.
+between
+in
+is null
+like
+
+between:
+--------------
+to retrive the values between range of 10 to 20
+value>=10 and value<=20;
+value between 10 and 20;
+value not between 10 and 20;
+
+In:
+------
+val = 10 or val = 20
+val in(10,20);
+val not in(10,20);
+
+is null:
+-----------
+it returns null value rows.
+name is null;
+name is not null;
+
+** like:
+---------
+like operator is used to pattern matching
+it contains 2 wildcards.
+
+1) _(underscore):
+--------------------
+it is represent the single character.
+name like '____'; 4 underscore
+
+2)%:
+-------
+it is indicate zero or more characters
+name like 'a%';
+name like '%a%';
+name like '%a_';
+name like '%h';
+name not like '%h%';
+name not like 'a%';
+
+isNull():
+----------
+salary:
+-----------
+20000
+null  it wll assign to 1
+40000
+null
+3000
+the row doesnot contain null function it assign value 0
+
+select salary isNull (salary) from emp;
+salary:
+------------
+------------
+0
+1
+0
+1
+0
+
+** ifNull function():
+------------------------
+select salary ifNull(salary,1000) from emp;
+
+salary:
+--------
+20000
+null
+40000
+null
+3000
+salary:
+----------
+20000
+1000
+40000
+10000
+3000
+ 
+update:
+--------
+update command mainly used to manupulate data
+
+update table_name set updatecondition;
+update table_name set updatecondition where condition;
+
+delete:
+---------
+delete command is used to remove all data or particular data.
+
+syntax:
+-------
+delete from tablename;//total data
+delete from tablename where condition;
+
+drop:
+---------
+totaldata+structure;
+
+delete:
+--------
+total data or particular data but not structure.
+
+truncate:
+---------
+truncate table tablename;
+remove total data immediately but not structure.

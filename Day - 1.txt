@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 
 Day - 1
 
+=======
+Day - 1
+>>>>>>> master
 Data:
 ------
 collection of raw facts,figures,symbol
@@ -73,6 +77,7 @@ it is free of cost.
 filed/column:it represents particular column
 studentid=101
 record/row:collection of fields.
+<<<<<<< HEAD
 studenid=101,sname='rahul',course='da';
 table:collection of records and fields.
 =======
@@ -153,3 +158,6 @@ record/row:collection of fields.
 studenid=101,sname='rahul',course='da';
 table:collection of records and fields.
 
+=======
+studenid=101,sname='rahul',course='da'
+>>>>>>> master
