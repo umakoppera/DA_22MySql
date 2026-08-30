@@ -1,0 +1,134 @@
+Day - 9 
+
+Numeric functions in sql;
+------------------------- 
+To perform the mathemactical
+ 
+1)round();
+--------
+it return a round of values at specified no.of decimal places.
+
+round(123.456,2);123.46
+round(123.454,2);123.45
+round(123.453,-1);120
+round(123.453,-2);100
+round(1540.785,-1)//1540
+round(1540.785,-2)//1500
+round(1540.785,-3)//1000
+
+2)sqrtroot():
+------------
+it return a sqrt of value
+
+3)power():
+---------
+select power(3,2);
+
+4)mod();
+------------
+select mod(10,3);
+
+5)ads();
+---------
+select abs(-100);
+
+6)sign();
+-----------
+it return 0(0) or 1(+ve) or -1(-ve)
+select sign(90);
+
+7)Ceil():
+--------------
+it returns nearest higher value.
+select celi(20.8);
+
+8)floor():
+------------
+it returns nearest lower value.
+select floor(20.4);
+
+9)Rand():
+-------------
+it returns random decimal values between 0 and 1.
+select rand();
+select rand()*100;
+select floor(rand()*100);
+
+10)Greatest():
+--------------------
+it return maximum value in give values.
+select greatest(20,70,30);
+
+11)Least():
+-------------
+it return a minimum value in given values.
+select least(20,70,30);
+
+String functions in sql:
+
+Upper():
+---------
+to convert all characters into uppercase
+select upper('mysql');
+
+Lower():
+it convert all characters into lowercase
+select lower('MYSQL');
+
+length():
+------------
+it return a length of given string.
+select length('mysql');
+
+Char_length():
+------------------
+it return total count of characters into given string.
+select char_length('mysql');
+
+Substring():
+-------------
+to extract the particular range of string.
+select substring('mysql developer',1,5);
+
+left():
+-------------
+To return particular range of characters from left side
+select left (' mysqldeveloper',7);
+
+Right():
+------------
+to return particular range of character from right side
+select right('mysqldeveloper',7);
+
+concat():
+------------
+select concat('mysql','developer');
+
+Concat_ws():
+-----------
+it is used combine the two or more strings separate with separator.
+select concat_ws('-','mysql','developer');
+
+Replace():
+-----------
+it is used to replace the old string to new string.
+select replace('java','a','@');
+
+Trim():
+---------
+it removes first and last spaces.
+select trim(' mysql ');
+
+Lpad():
+----------
+to add the character at to reach length of string
+lpad('mysql',10,'*');
+
+Rpad():
+-----------
+select rpad('mysql',10,'*');
+
+Locate():
+---------
+to return a locate value in a string.
+select locate('a','apple');
