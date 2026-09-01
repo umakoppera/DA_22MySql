@@ -1,0 +1,43 @@
+Day - 15
+***********
+
+Cross join:
+-------------
+Natural join:
+----------------
+
+Subquery:
+-------------
+to write a query inside another query
+the subquery enclosed with in paranthesis.
+
+select query condition(subquery);
+
+singlerow subquery:
+---------------------
+the subquery returns only one row that is called single row subquery
+using >,<,=,>=,<= etc
+
+multirow subquery:
+---------------------
+the subquery returns more than one row that is called multirow subquery
+using any,all,some,In
+
+nested subquery:
+-----------------
+multilevel of subquery is called as nested subquery.
+
+corelated subquery:
+----------------------
+
+
+ select max(price) from products where price=
+ (select max(price) from products where price<
+ (select max(price) from products));
+ 
+select price from product where category='Furniture';
+
+ select * from employee where dept_id where in
+ (select dept_id from department where
+ dept_name in('HR','IT));
+
