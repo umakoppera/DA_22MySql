@@ -1,0 +1,30 @@
+Day - 14
+************
+self join:
+-------------
+the table join with itself
+
+EX:
+eid ename m_id
+101   A    102
+102   B    Null
+103   c    102
+104   D    103
+
+select e.eid from employee e join employee m%d
+on e.m_id = m.eid;
+
+Equi join:
+------------
+to join the one or more tables using = operator
+
+select col1,col2 from tablename join tablename 
+on col1=col1
+
+select e.*,d.* from employee e join department d
+on e.dept_id=d.dept_id;
+
+Non Equi join:
+-----------------
+to join the one or more table using other than = operator
+such as using >,< and between etc.
