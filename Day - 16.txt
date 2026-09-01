@@ -1,0 +1,33 @@
+Day - 16
+**************
+corelated subquery:
+----------------------
+it means the subquery is depend on current row of outer query.
+
+
+ select e.emp_name,e.salary,e.dept_id from employee e
+ where salary > (select avg(salary) from employee e1
+ where e1.dept_id=e.dept_id);
+
+find the employees whose salary is greater than of min salary in
+same department.
+
+find the employee details of each dept min salary
+
+Exists:
+-------------
+select c.* from customers c where exists
+(select o.customer_id from orders o where o.customer_id=c.customer_id);
+
+not exists:
+-------------
+select c.* from customer c where not exists
+(select o.customer_id from order o where o.customer_id=c.customer_id);
+
+ 
+ select * from employee where salary >
+ (select salary from employee where emp_name = 'Rahul');
+
+  select * from employee
+  where dept = (select dept from 
+  employee where ename = 'Vijay');
