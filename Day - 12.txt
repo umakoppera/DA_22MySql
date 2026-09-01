@@ -1,0 +1,259 @@
+Day - 12 
+*********
+
+eid(auto_increment) ename esal
+
+insert into emp(ename,esal) values('jaya',10000);
+select last_insert_id();//1
+show table status like 'tablename';
+
+set operators:
+----------------
+it is used to combine the two or more select Queries.
+
+1)Union
+2)UnionAll
+3)Intersect
+4)Except
+
+select * from old_student
+where in (select * from new_student);
+
+select * from old_student
+where in (select * from new_student);
+except
+Joins:
+------------
+to combine the rows from 2 or more tables.
+Core joins:
+--------------
+1)Inner join
+2)Natural join
+3)Equi join
+4)Non equijoin
+
+outer joins:
+--------------------
+1)left join/left outer join
+-----------------------------
+2)Right join
+3)Full join
+
+
+mysql> select * from department;
++---------+-----------+-----------+
+| dept_id | dept_name | location  |
++---------+-----------+-----------+
+|      10 | HR        | Hyderabad |
+|      20 | IT        | Bangalore |
+|      30 | Finance   | Chennai   |
+|      40 | Sales     | Mumbai    |
+|      50 | Marketing | Pune      |
+|      60 | Support   | Delhi     |
+|      70 | Testing   | Kolkata   |
++---------+-----------+-----------+
+7 rows in set (0.00 sec)
+
+mysql> select * from employee;
++--------+----------+----------+--------+---------+------------+
+| emp_id | emp_name | salary   | gender | dept_id | manager_id |
++--------+----------+----------+--------+---------+------------+
+|    101 | Rahul    | 50000.00 | Male   |      20 |        105 |
+|    102 | Sneha    | 45000.00 | Female |      10 |        105 |
+|    103 | Kiran    | 60000.00 | Male   |      20 |        105 |
+|    104 | Anjali   | 55000.00 | Female |      30 |        106 |
+|    105 | Amit     | 90000.00 | Male   |      20 |       NULL |
+|    106 | Priya    | 85000.00 | Female |      40 |       NULL |
+|    107 | Ravi     | 40000.00 | Male   |      50 |        106 |
+|    108 | Meena    | 70000.00 | Female |    NULL |        105 |
+|    109 | Suresh   | 48000.00 | Male   |      80 |        106 |
+|    110 | Divya    | 62000.00 | Female |      20 |        105 |
+|    111 | Vikas    | 38000.00 | Male   |      60 |        106 |
+|    112 | Pooja    | 46000.00 | Female |      10 |        105 |
++--------+----------+----------+--------+---------+------------+
+12 rows in set (0.00 sec)
+
+mysql> select e.*,d.dept_name from employee e
+    -> left join department d
+    -> on e.dept_id=d.dept_id;
++--------+----------+----------+--------+---------+------------+-----------+
+| emp_id | emp_name | salary   | gender | dept_id | manager_id | dept_name |
++--------+----------+----------+--------+---------+------------+-----------+
+|    101 | Rahul    | 50000.00 | Male   |      20 |        105 | IT        |
+|    102 | Sneha    | 45000.00 | Female |      10 |        105 | HR        |
+|    103 | Kiran    | 60000.00 | Male   |      20 |        105 | IT        |
+|    104 | Anjali   | 55000.00 | Female |      30 |        106 | Finance   |
+|    105 | Amit     | 90000.00 | Male   |      20 |       NULL | IT        |
+|    106 | Priya    | 85000.00 | Female |      40 |       NULL | Sales     |
+|    107 | Ravi     | 40000.00 | Male   |      50 |        106 | Marketing |
+|    108 | Meena    | 70000.00 | Female |    NULL |        105 | NULL      |
+|    109 | Suresh   | 48000.00 | Male   |      80 |        106 | NULL      |
+|    110 | Divya    | 62000.00 | Female |      20 |        105 | IT        |
+|    111 | Vikas    | 38000.00 | Male   |      60 |        106 | Support   |
+|    112 | Pooja    | 46000.00 | Female |      10 |        105 | HR        |
++--------+----------+----------+--------+---------+------------+-----------+
+12 rows in set (0.01 sec)
+
+mysql> select d.*,e.emp_name from department d
+    -> left join employee e
+    -> on e.dept_id = d.dept_id;
++---------+-----------+-----------+----------+
+| dept_id | dept_name | location  | emp_name |
++---------+-----------+-----------+----------+
+|      10 | HR        | Hyderabad | Pooja    |
+|      10 | HR        | Hyderabad | Sneha    |
+|      20 | IT        | Bangalore | Divya    |
+|      20 | IT        | Bangalore | Amit     |
+|      20 | IT        | Bangalore | Kiran    |
+|      20 | IT        | Bangalore | Rahul    |
+|      30 | Finance   | Chennai   | Anjali   |
+|      40 | Sales     | Mumbai    | Priya    |
+|      50 | Marketing | Pune      | Ravi     |
+|      60 | Support   | Delhi     | Vikas    |
+|      70 | Testing   | Kolkata   | NULL     |
++---------+-----------+-----------+----------+
+11 rows in set (0.00 sec)
+
+mysql> select e.emp_name,d.dept_name from employee e
+    -> inner join department d
+    -> on e.dept_id = d.dept_id;
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Rahul    | IT        |
+| Sneha    | HR        |
+| Kiran    | IT        |
+| Anjali   | Finance   |
+| Amit     | IT        |
+| Priya    | Sales     |
+| Ravi     | Marketing |
+| Divya    | IT        |
+| Vikas    | Support   |
+| Pooja    | HR        |
++----------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> select e.emp_name,d.dept_name from employee e
+    -> inner join department d
+    -> on e.dept_id = d.dept_id
+    -> where department in ('IT',Finance);
+ERROR 1054 (42S22): Unknown column 'department' in 'where clause'
+mysql> select e.emp_name,d.dept_name from employee e
+    -> inner join department d
+    -> on e.dept_id = d.dept_id
+    -> where d.dept_name in ('IT',Finance);
+ERROR 1054 (42S22): Unknown column 'Finance' in 'where clause'
+mysql> select e.emp_name,d.dept_name from employee e
+    ->      inner join department d
+    ->      on e.dept_id = d.dept_id
+    ->      where d.dept_name in ('IT','Finance');
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Rahul    | IT        |
+| Kiran    | IT        |
+| Anjali   | Finance   |
+| Amit     | IT        |
+| Divya    | IT        |
++----------+-----------+
+5 rows in set (0.00 sec)
+
+mysql>
+mysql> select emp_name from employee
+    -> union all
+    -> select dept_name from department;
++-----------+
+| emp_name  |
++-----------+
+| Rahul     |
+| Sneha     |
+| Kiran     |
+| Anjali    |
+| Amit      |
+| Priya     |
+| Ravi      |
+| Meena     |
+| Suresh    |
+| Divya     |
+| Vikas     |
+| Pooja     |
+| HR        |
+| IT        |
+| Finance   |
+| Sales     |
+| Marketing |
+| Support   |
+| Testing   |
++-----------+
+19 rows in set (0.01 sec)
+
+mysql> select d.dept_id from department d
+    -> left join employee e on
+    -> d.dept_id = e.dept_id;
++---------+
+| dept_id |
++---------+
+|      10 |
+|      10 |
+|      20 |
+|      20 |
+|      20 |
+|      20 |
+|      30 |
+|      40 |
+|      50 |
+|      60 |
+|      70 |
++---------+
+11 rows in set (0.00 sec)
+
+mysql> select d.dept_id from department d
+    -> left join employee e on
+    -> d.dept_id = e.dept_id
+    -> where e.dept_id is null;
++---------+
+| dept_id |
++---------+
+|      70 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> select e.emp_name,d.dept_id from employee e
+    -> inner join department d
+    -> on d.dept_id = e.dept_id;
++----------+---------+
+| emp_name | dept_id |
++----------+---------+
+| Rahul    |      20 |
+| Sneha    |      10 |
+| Kiran    |      20 |
+| Anjali   |      30 |
+| Amit     |      20 |
+| Priya    |      40 |
+| Ravi     |      50 |
+| Divya    |      20 |
+| Vikas    |      60 |
+| Pooja    |      10 |
++----------+---------+
+10 rows in set (0.00 sec)
+
+mysql> select e.emp_name,e.salary,d.dept_name,d.location
+    -> from employee e left join department d
+    -> on e.dept_id = d.dept_id;
++----------+----------+-----------+-----------+
+| emp_name | salary   | dept_name | location  |
++----------+----------+-----------+-----------+
+| Rahul    | 50000.00 | IT        | Bangalore |
+| Sneha    | 45000.00 | HR        | Hyderabad |
+| Kiran    | 60000.00 | IT        | Bangalore |
+| Anjali   | 55000.00 | Finance   | Chennai   |
+| Amit     | 90000.00 | IT        | Bangalore |
+| Priya    | 85000.00 | Sales     | Mumbai    |
+| Ravi     | 40000.00 | Marketing | Pune      |
+| Meena    | 70000.00 | NULL      | NULL      |
+| Suresh   | 48000.00 | NULL      | NULL      |
+| Divya    | 62000.00 | IT        | Bangalore |
+| Vikas    | 38000.00 | Support   | Delhi     |
+| Pooja    | 46000.00 | HR        | Hyderabad |
++----------+----------+-----------+-----------+
+12 rows in set (0.00 sec)
