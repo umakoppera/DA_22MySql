@@ -1,0 +1,57 @@
+Day - 20
+*************
+E-R Diagrams or E-R models:
+-------------------------------
+E-R stands for entity relationship.
+
+Entity:
+---------
+Entity is nothing but a table
+it is represent in rectangle.
+
+Tangable entity - which tough
+Ex:car,Mobile,person
+Intagable entity
+Ex:Bank
+
+Types of entity:
+------------------
+1)Strong entity - the table contain primary key
+it represent with rectangle
+
+2)Weak entity - the table doesnot contain primary key
+it represent with double rectangle
+
+Attributes:
+------------
+attributes are columns and it represented by elipse
+the entity contain one or more attributes
+
+Types of Attributes:
+--------------------
+1)simple attribute - it contains single value 
+2)Composit attribute - it represent elipse
+3)Singlevalue - it contain single valued attributes
+4)Multivalue - it contain more than value 
+5)Derivide   - it depend on another attribute
+it reprented by dotted elips
+6)Key attribute - reprensent elipse _
+
+Relationships:
+---------------
+relationships are used for establishment for relationships
+
+1)Uniary relationship - it maintains same relationship
+
+2)Binary relationship - it relationship b/w two tables
+
+3)Tinary relationship - relationship b/w three tables
+
+4)N-relationship - the relationship b/w more than one table
+
+Types of relationship association:
+-----------------------------------
+one-one : the first table row is relationship b/w second table any one row in single table
+one-many: the first table any row relationship b/w more than one row in second table
+many-one : the first table contains more than one row relationship b/w second table
+many-many: multiple records in first table can relate to multiple records in second table
