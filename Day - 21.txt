@@ -1,0 +1,116 @@
+Day - 21
+**********
+Window functions:
+-------------------
+Window function used to find rows and ranking in table
+Ranking functions:
+--------------------
+row_number()
+rank()
+dense_rank()
+ntitle()
+
+aggregate functions:
+-----------------------
+avg()
+max()
+min()
+count()
+sum()
+
+offset function:
+------------------
+first_value()
+lag()
+lead()
+
+syntax of window function:
+---------------------------
+select columlist,functionname over() as aliasname from tablename;
+
+in window function represented by over():
+-------------------------------------------
+partition by-----it is used to divided the data into group based on column
+order by ---------to sort the data into a order based on column
+
+
+select emp_id,emp_name,salary,rank(),over(order by salary desc) as rsalary
+from employee;
+
+select * from
+(select emp_name,department,salary,rank() 
+over(partition by department order by salary desc) as rsalary from employee)
+where rsalary=1;
+
+select * from
+(select emp_name,department,salary,rank() 
+over(partition by department order by salary desc) 
+as rsalary from employee) emp where rsalary<=2;
+
+select * from
+(select emp_id,emp_name,row_number()
+over(order by emp_id) as erownumber from employee) as emp
+where erowNumber=9;
+
+select emp_id,emp_name,salary,rank()
+over(order by salary desc)
+as rsalary from employees;
+
+select emp_name,department,salary,rank()
+over(partition by department order by salary desc)
+as rsalary from employee where rsalary=1;
+
+using row_number():
+--------------------
+
+select department,avg(salary) from employee group by department;
+select emp_id,emp_name,department,row_number()
+over(partition by emp_id) as eRowNum from employee;
+
+select emp_id,emp_name,department,row_number()
+over(order by emp_id) as eRowNum from employee;
+
+select emp_id,emp_name,department,row_number()
+over(partition by department) as eRowNum from employee;
+
+using rank():
+----------------
+
+select emp_id,emp_name,salary,rank() over(order by salary desc) as rsalary from employee;
+
+using dense_rank():
+-----------------------
+
+select emp_id,emp_name,salary,dense_rank() over(order by salary desc) as rsalary from employee;
+
+
+select emp_name,salary,department,avg(salary) over(partition by department) as avgsal from employee;
+
+select emp_id,emp_name,rank() over(partition by department order by salary) as drank from employee;
+
+select emp_id,emp_name,department,salary,rank() over(partition by department order by salary desc) as drank from employee;
+
+select emp_name,department,salary,rank() over(order by salary desc) as rsalary from employee;
+
+select * from 
+(select emp_name,department,salary,rank()
+over(order by salary desc) as rsalary from employee) emp
+where rsalary=3;
+
+select * from 
+(select emp_name,department,salary,rank()
+over(partition by department order by salary desc) as rsalary from employee) emp
+where rsalary=1;
+get top 1 ranks in each department
+
+select * from 
+(select emp_name,department,salary,rank()
+over(partition by department order by salary desc) as rsalary from employee) emp
+where rsalary<=2;
+it displays top 2 employees in each department
+
+select * from 
+(select emp_id,emp_name,row_number()
+over(order by emp_id) as erowNumber from employee) as emp
+where erowNumber=9;
+
